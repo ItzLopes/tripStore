@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Home - Produtos</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="titulo">
+    <h1>HOME</h1>
+  </div>
+  <div>
+    <h2>Lista de Produtos</h2>
+  </div>
+
+  <!-- Barra de pesquisa -->
+  <input class="text" id="searchInput" onkeyup="filterList()" placeholder="Buscar produtos...">
+
+  <!-- Seletor de categoria (já visível) -->
+  <select id="categoryFilter">
+    <option value="all">Categoria</option>
+    <option value="eletronicos">Eletrônicos</option>
+    <option value="roupas">Roupas</option>
+    <option value="livros">Livros</option>
+  </select>
+
+  <div id="productList" class="product-list">
+    <!-- Os produtos serão inseridos aqui via JavaScript -->
+  </div>
+
+  <script>
+    const products = [
+      { id: 1, nome: "Smartphone", categoria: "eletronicos" },
+      { id: 2, nome: "Camisa Polo", categoria: "roupas" },
+      { id: 3, nome: "Notebook", categoria: "eletronicos" },
+      { id: 4, nome: "Livro de HTML", categoria: "livros" },
+      { id: 5, nome: "Calça Jeans", categoria: "roupas" },
+    ];
+
+    const productList = document.getElementById("productList");
+    const categoryFilter = document.getElementById("categoryFilter");
+    const searchInput = document.getElementById("searchInput");
+
+    function renderProducts(filteredProducts) {
+  productList.innerHTML = "";
+  filteredProducts.forEach(prod => {
+    const div = document.createElement("div");
+    div.className = "product";
+    div.innerHTML = `
+      <h3>${prod.nome}</h3>
+      <p class="hidden-category">Categoria: ${prod.categoria}</p>
+      <a href="produto.html?id=${prod.id}">Ver detalhes</a>
+    `;
+    productList.appendChild(div);
+  });
+}
+
+
+    function filterProducts() {
+      const categoria = categoryFilter.value;
+      const filtrados = categoria === "all" ? products : products.filter(p => p.categoria === categoria);
+      renderProducts(filtrados);
+    }
+
+    function filterList() {
+      const input = searchInput.value.toUpperCase();
+      const liElements = Array.from(productList.getElementsByClassName('product'));
+      liElements.forEach(li => {
+        const productName = li.getElementsByTagName("h3")[0].textContent || "";
+        if (productName.toUpperCase().indexOf(input) > -1) {
+          li.style.display = "";
+        } else {
+          li.style.display = "none";
+        }
+      });
+    }
+
+    categoryFilter.addEventListener("change", () => {
+      filterProducts();
+      filterList(); // Aplique o filtro de pesquisa também após alterar a categoria
+    });
+
+    // Inicialmente mostrar todos os produtos
+    renderProducts(products);
+
+  </script>
+</body>
+</html>
