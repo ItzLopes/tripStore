@@ -1,0 +1,21 @@
+<script>
+    ('https://fakestoreapi.com/users')
+  .then(response => response.json())
+  .then(data => console.log(data));
+    e.preventDefault();
+
+    const usuarioAtualizado = {
+      nome: nome.value,
+      email: email.value,
+      telefone: telefone.value,
+      endereco: endereco.value
+    };
+
+    // Atualiza os dados no sessionStorage
+    sessionStorage.setItem("usuarioLogado", JSON.stringify(usuarioAtualizado));
+
+    mensagem.textContent = "Informações atualizadas com sucesso!";
+    mensagem.style.color = "green";
+    });
+    
+</script>

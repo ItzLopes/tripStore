@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página do Usuário</title>
+</head>
+
+<body>
+    <h1>PÁGINA DO USUÁRIO</h1>
+    <h2>Bem-vindo, <span id="nome-usuario"></span></h2>
+
+    <p>Esta é a página do usuário. Você pode editar suas informações abaixo.</p>
+
+  <form id="form-usuario">
+    <label>Nome Completo:
+      <input type="text" id="nome" disabled />
+    </label><br /><br />
+
+    <label>Email:
+      <input type="email" id="email" disabled />
+    </label><br /><br />
+
+    <label>Telefone:
+      <input type="text" id="telefone" />
+    </label><br /><br />
+
+    <label>Rua:
+      <input type="text" id="rua" />
+    </label><br /><br />
+
+    <label>Cidade:
+      <input type="text" id="cidade" />
+    </label><br /><br />
+
+    <label>CEP:
+      <input type="text" id="cep" />
+    </label><br /><br />
+
+    <button type="submit">Atualizar Informações</button>
+  </form>
+
+  <p id="mensagem"></p>
+</body>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+  const form = document.getElementById("form-usuario");
+  const nome = document.getElementById("nome");
+  const email = document.getElementById("email");
+  const telefone = document.getElementById("telefone");
+  const rua = document.getElementById("rua");
+  const cidade = document.getElementById("cidade");
+  const cep = document.getElementById("cep");
+  const mensagem = document.getElementById("mensagem");
+
+  // Verifica se usuário está logado
+  const usuarioStr = sessionStorage.getItem("usuarioLogado");
+
+  if (!usuarioStr) {
+    mensagem.textContent = "Usuário não logado. Redirecionando...";
+    setTimeout(() => (window.location.href = ""), 10000);
+    return;
+  }
+
+  const usuarioSession = JSON.parse(usuarioStr);
+  const userId = usuarioSession.id;
+
+  // Busca dados da API
+  fetch(`https://fakestoreapi.com/users/${userId}`)
+    .then((res) => res.json())
+    
+    .then((usuario) => {
+      nome.value = `${usuario.name.firstname} ${usuario.name.lastname}`;
+      email.value = usuario.email;
+      telefone.value = usuario.phone || "";
+      rua.value = usuario.address?.street || "";
+      cidade.value = usuario.address?.city || "";
+      cep.value = usuario.address?.zipcode || "";
+    })
+    .catch((err) => {
+      console.error("Erro ao carregar dados do usuário:", err);
+      mensagem.textContent = "Erro ao buscar dados do usuário.";
+    });
+
+  // Atualização local (simulada)
+  form.addEventListener("submit", (e) => {
+    e.preventDefault();
+
+    const dadosAtualizados = {
+        telefone: telefone.value,
+        endereco: {
+        rua: rua.value,
+        cidade: cidade.value,
+        cep: cep.value,
+      },
+    };
+
+    sessionStorage.setItem("dadosAtualizadosUsuario", JSON.stringify(dadosAtualizados));
+    mensagem.textContent = "Informações atualizadas com sucesso!";
+    mensagem.style.color = "green";
+  });
+});
+
+
+</script>
+
+</html>
