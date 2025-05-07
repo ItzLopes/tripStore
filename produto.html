@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Trip Store Produtos</title>
+  <link rel="stylesheet" href="./produto.css">
+</head>
+<body>
+    
+
+  <div class="produto-container" id="produto"></div>
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const id = params.get('id');
+
+    fetch(`https://fakestoreapi.com/products/${id}`)
+      .then(res => res.json())
+      .then(prod => {
+        const container = document.getElementById('produto');
+        container.innerHTML = `
+          <div class="produto-detalhes">
+            <img src="${prod.image}" alt="${prod.title}">
+          </div>
+          <div class="produto-info">
+            <h1>${prod.title}</h1>
+            <p class="preco-produto">R$ ${prod.price}</p>
+            <p class="descricao-produto">${prod.description}</p>
+            <div class="botoes-produto">
+                <button class="botao-favoritar-produto">★ Favoritar</button>
+                <button class="botao-comprar-produto">Adicionar ao Carrinho</button>
+            </div>
+            
+
+        `;
+      });
+  </script>
+
+</body>
+</html>
