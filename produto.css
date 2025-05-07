@@ -57,6 +57,8 @@ body {
     gap: 1rem;
   }
   .botao-comprar-produto {
+    display: flex;
+    flex-direction: row;
     margin-top: 22px;
     max-height: 2.8rem;
     height: 2.8rem;
@@ -69,8 +71,13 @@ body {
     font-size: 16px;
     cursor: pointer;
     transition: background 0.3s;
+    align-items: center;
+    /* margin-left: 0.5rem; */
+    gap: 0.5rem ;
   }
   .botao-favoritar-produto {
+    display: flex;
+    flex-direction: row;
     margin-top: 22px;
     max-height: 2.8rem;
     height: 2.8rem;
@@ -80,9 +87,26 @@ body {
     color: white;
     border: none;
     border-radius: 6px;
-    font-size: 16px;
+    font-size: 18px;
     cursor: pointer;
     transition: background 0.3s;
+    align-items: center;
+    /* margin-left: 0.5rem; */
+    gap: 0.5rem ;
+  }
+
+  .botao-favoritar-produto h4{
+    align-items: center;
+    display: flex;
+    justify-content: center;
+  }
+  .img-favorito-produto{
+    height: 70%;
+    margin-left: 1rem;
+  }
+  .img-carrinho-produto{
+    height: 90%;
+    margin-left: 0.5rem;
   }
 
   .botao-comprar-produto:hover {
