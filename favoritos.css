@@ -21,7 +21,6 @@ a:hover {
   text-decoration: underline;
 }
 
-
 .filtro-container {
   max-width: 1000px;
   margin: 20px auto;
@@ -44,8 +43,19 @@ select {
   background: #fff;
 }
 
+#searchInput {
+  width: 100%;
+  max-width: 400px;
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  margin-bottom: 20px;
+  display: block;
+  margin: 20px auto;
+}
 
-.produtos-container {
+.produtos-favoritos-container {
   max-width: 1200px;
   margin: 20px auto;
   display: flex;
@@ -53,7 +63,6 @@ select {
   gap: 20px;
   justify-content: center;
 }
-
 
 .produto-item {
   background: #fff;
@@ -89,17 +98,17 @@ select {
 }
 
 .produto-item button {
-  background: #650392c9;
+  background: #e63946;
   color: white;
+  padding: 10px 20px;
   border: none;
   border-radius: 6px;
   font-size: 16px;
-  padding: 10px;
   cursor: pointer;
   transition: background 0.3s;
+  margin-top: 10px;
 }
 
 .produto-item button:hover {
-  background: #9606d8d3;
+  background: #d32f2f;
 }
-

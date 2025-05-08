@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Trip Store - Home</title>
-  <link rel="stylesheet" href="home.css">
+  <title>Trip Store - Favoritos</title>
+  <link rel="stylesheet" href="favoritos.css">
   <link rel="stylesheet" href="header.css">
 </head>
 <body>
@@ -25,8 +25,8 @@
   </header>
 
   <div class="filtro-container">
-    <label for="categoria">Filtrar por categoria:</label>
-    <select id="categoria">
+    <label for="categoria-favoritos">Filtrar por categoria:</label>
+    <select id="categoria-favoritos">
       <option value="all">Todas</option>
       <option value="electronics">Eletrônicos</option>
       <option value="jewelery">Joias</option>
@@ -35,9 +35,11 @@
     </select>
   </div>
 
-  <div class="produtos-container" id="produtos"></div>
+  <input class="text" id="searchInput" placeholder="Buscar produtos...">
 
-  <script src="home.js"></script>
+  <div class="produtos-favoritos-container" id="produtos-favoritos"></div>
+
+  <script src="favoritos.js"></script>
 
 </body>
 </html>
