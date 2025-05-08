@@ -1,20 +1,20 @@
 body{
-    background-color: #424242;
+    background-color: #ffffff;
     font-family: Arial, sans-serif;
     overflow-x: hidden;
-    background-image: url('../img/istockphoto-545457774-170667a.jpg');
-    background-size: cover;         /* cobre toda a tela */
-    background-position: center;    /* centraliza a imagem */
-    background-repeat: no-repeat;   /* não repete */
-    height: 100vh;                  /* altura da tela */
-    margin: 0; 
+    /* background-image: url('../img/istockphoto-545457774-170667a.jpg');
+    background-size: cover;         
+    background-position: center;    
+    background-repeat: no-repeat;   
+    height: 100vh;                  
+    margin: 0;  */
 }
 .titulo_login{  
     width: auto;
     margin-left: 7%;
     margin-top: 3vh;
     letter-spacing: 0.5rem;
-    color: white;
+    color: rgb(0, 0, 0);
     
 }
 .quadrado_titulo{
@@ -22,7 +22,7 @@ body{
     height: 10vh;
     margin-left: 44%;
     margin-top: 10vh;
-    background-color: rgb(121, 109, 133);
+    background-color: rgb(255, 255, 255);
     border: 3px solid rgb(0, 0, 0);
     border-radius: 80px;
 }
@@ -126,8 +126,4 @@ body{
     font-weight: bold;
     color: #2c3e50;
     letter-spacing: 1px;
-  }
-
-  .logo span {
-    color: #3498db; /* Destaque em azul */
   }
