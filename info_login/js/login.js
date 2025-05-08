@@ -4,8 +4,8 @@ document.addEventListener("DOMContentLoaded", function () {
     form.addEventListener("submit", function (e) {
         e.preventDefault(); 
 
-        const username = document.getElementById("id_login").value;
-        const password = document.getElementById("id_senha").value;
+        const username = document.getElementById("id_login").value.trim();
+        const password = document.getElementById("id_senha").value.trim();
 
         fetch('https://fakestoreapi.com/auth/login', {
             method: 'POST',
@@ -22,6 +22,7 @@ document.addEventListener("DOMContentLoaded", function () {
             console.log("Resposta da API:", data);
             if (data.token) {
                 alert("Login bem-sucedido! Token: " + data.token);
+                window.location.href = "home.html";
             } else {
                 alert("Falha no login. Verifique suas credenciais.");
             }
