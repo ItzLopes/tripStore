@@ -79,14 +79,14 @@
       cidade.value = usuario.address?.city || "";
       cep.value = usuario.address?.zipcode || "";
     })
-    .catch((err) => {
-      console.error("Erro ao carregar dados do usuário:", err);
+    .catch((erro) => {
+      console.error("Erro ao carregar dados do usuário:", erro);
       mensagem.textContent = "Erro ao buscar dados do usuário.";
     });
 
   // Atualização local (simulada)
-  form.addEventListener("submit", (e) => {
-    e.preventDefault();
+  form.addEventListener("submit", (clique) => {
+    clique.preventDefault();
 
     const dadosAtualizados = {
         telefone: telefone.value,
