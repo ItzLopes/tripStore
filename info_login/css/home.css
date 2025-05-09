@@ -21,7 +21,6 @@ a:hover {
   text-decoration: underline;
 }
 
-
 .filtro-container {
   max-width: 1000px;
   margin: 20px auto;
@@ -36,7 +35,7 @@ label {
   margin-right: 10px;
 }
 
-select {
+select, #search {
   padding: 8px;
   font-size: 16px;
   border-radius: 4px;
@@ -44,6 +43,9 @@ select {
   background: #fff;
 }
 
+#search {
+  margin-left: 10px;
+}
 
 .produtos-container {
   max-width: 1200px;
@@ -53,7 +55,6 @@ select {
   gap: 20px;
   justify-content: center;
 }
-
 
 .produto-item {
   background: #fff;
@@ -102,4 +103,3 @@ select {
 .produto-item button:hover {
   background: #9606d8d3;
 }
-

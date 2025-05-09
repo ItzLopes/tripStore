@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document_login</title>
     <link rel="stylesheet" href="../css/login.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
     <script src="../js/login.js" defer></script>
     
 </head>
@@ -16,24 +19,28 @@
         <h1 class="titulo_login">TRIPSTORE</h1>
     </div>
     <div class="quadrado_login">
-        <h2 class="subtitulo">Login</h2>
-        <form class="form_login">
-            <div class="mov_1">
-                <label class="login_label">Nome de Usuário</label>
-                <input type="text" id="id_login" class="input_login" placeholder=" Digite aqui seu nome "/>
-            </div>
-            <div class="mov_2">
-                <label class="senha_label">Senha</label>
-                <input type="text" id="id_senha" class="input_senha" placeholder=" Digite aqui sua senha "/>
-            </div>
-            <div class="recuperar_senha_login">
-                <a class="color_link_login" href="">esqueci minha senha</a>
-            </div>
-            <button class="botao_entrar">Entrar</button>
-        </form>
-        <video autoplay muted loop class="videoFundo">
-            <source src="../videos/TRIP.mp4" type="video/mp4">
-        </video>
+        <div>
+            <h2 class="subtitulo">Login</h2>
+            <form class="form_login">
+                <div class="mov_1">
+                    <label class="login_label">Nome de Usuário</label>
+                    <input type="text" id="id_login" class="input_login" placeholder=" Digite aqui seu nome "/>
+                </div>
+                <div class="mov_2">
+                    <label class="senha_label">Senha</label>
+                    <input type="text" id="id_senha" class="input_senha" placeholder=" Digite aqui sua senha "/>
+                </div>
+                <div class="recuperar_senha_login">
+                    <a class="color_link_login" href="">esqueci minha senha</a>
+                </div>
+                <button class="botao_entrar" type="submit">Entrar</button>
+            </form>
+        </div>
+        <div class="movi_video">
+            <video autoplay muted loop class="videoFundo">
+                <source src="../videos/TRIP.mp4" type="video/mp4">
+            </video>
+        </div>
     </div>
 </main>
 </body>
