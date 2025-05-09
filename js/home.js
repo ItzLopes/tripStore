@@ -25,12 +25,11 @@ function exibirProdutos(produtos) {
   produtosContainer.innerHTML = '';
   produtos.forEach(produto => {
     const produtoHTML = `
-      <div class="produto-item">
+      <div class="produto-item" onclick="window.location.href='produto.html?id=${produto.id}'" style="cursor: pointer;">
         <img src="${produto.image}" alt="${produto.title}">
         <h3>${produto.title}</h3>
         <p>R$ ${produto.price}</p>
-        <a href="produto.html?id=${produto.id}">Ver detalhes</a>
-        <button class="favoritar-btn" data-id="${produto.id}">
+        <button class="favoritar-btn" data-id="${produto.id}" onclick="event.stopPropagation();">
           <span class="estrela">☆</span>
         </button>
       </div>
