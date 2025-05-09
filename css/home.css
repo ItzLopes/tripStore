@@ -35,7 +35,7 @@ label {
   margin-right: 10px;
 }
 
-select {
+select, #search {
   padding: 8px;
   font-size: 16px;
   border-radius: 4px;
@@ -43,19 +43,11 @@ select {
   background: #fff;
 }
 
-#searchInput {
-  width: 100%;
-  max-width: 400px;
-  padding: 10px;
-  font-size: 16px;
-  border-radius: 8px;
-  border: 1px solid #ddd;
-  margin-bottom: 20px;
-  display: block;
-  margin: 20px auto;
+#search {
+  margin-left: 10px;
 }
 
-.produtos-favoritos-container {
+.produtos-container {
   max-width: 1200px;
   margin: 20px auto;
   display: flex;
@@ -98,17 +90,16 @@ select {
 }
 
 .produto-item button {
-  background: #e63946;
+  background: #650392c9;
   color: white;
-  padding: 10px 20px;
   border: none;
   border-radius: 6px;
   font-size: 16px;
+  padding: 10px;
   cursor: pointer;
   transition: background 0.3s;
-  margin-top: 10px;
 }
 
 .produto-item button:hover {
-  background: #d32f2f;
+  background: #9606d8d3;
 }

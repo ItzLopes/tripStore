@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Home Trip Store</title>
+  <link rel="stylesheet" href="./destaque-produtos.css">
+</head>
+<body>
+
+  <header>
+    <h1>Produtos em Destaque</h1>
+  </header>
+
+  <div class="grid" id="produtos"></div>
+
+  <script>
+    // Busca os produtos da API
+    fetch('https://fakestoreapi.com/products')
+      .then(res => res.json())
+      .then(produtos => {
+        const container = document.getElementById('produtos');
+
+        produtos.forEach(prod => {
+          const card = document.createElement('div');
+          card.className = 'card';
+
+          // Preenche o HTML do card com os dados do produto
+          card.innerHTML = `
+            <img src="${prod.image}" alt="${prod.title}">
+            <h2>${prod.title}</h2>
+            <p>R$ ${prod.price.toFixed(2)}</p>
+          `;
+
+          // Evento de clique redireciona para a página do produto
+          card.onclick = () => {
+            window.location.href = `produto.html?id=${prod.id}`;
+          };
+
+          container.appendChild(card);
+        });
+      })
+      .catch(error => {
+        console.error("Erro ao carregar produtos:", error);
+      });
+  </script>
+
+</body>
+</html>
