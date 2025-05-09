@@ -2,17 +2,17 @@ const produtosContainer = document.getElementById('produtos');
 const categoriaSelect = document.getElementById('categoria');
 const searchInput = document.getElementById('search');
 
-let categoriaAtual = 'all';  // Variável para armazenar a categoria selecionada
-let termoPesquisa = '';  // Variável para armazenar o termo de pesquisa
+let categoriaAtual = 'all';
+let termoPesquisa = ''; 
 
 function carregarProdutos(categoria = 'all', pesquisa = '') {
   fetch('https://fakestoreapi.com/products')
     .then(res => res.json())
     .then(produtos => {
-      // Filtra por categoria
+
       const produtosFiltradosCategoria = categoria === 'all' ? produtos : produtos.filter(prod => prod.category === categoria);
 
-      // Filtra por termo de pesquisa
+
       const produtosFiltrados = produtosFiltradosCategoria.filter(prod =>
         prod.title.toLowerCase().includes(pesquisa.toLowerCase())
       );
@@ -74,5 +74,5 @@ searchInput.addEventListener('input', (e) => {
   carregarProdutos(categoriaAtual, termoPesquisa);
 });
 
-// Carrega produtos inicialmente
+
 carregarProdutos(categoriaAtual, termoPesquisa);
