@@ -43,11 +43,11 @@
       const confirmarSenha = document.getElementById("confirmarSenha");
       const mensagem = document.getElementById("mensagem");
 
-      form.addEventListener("submit", (e) => {
-        e.preventDefault();
+      form.addEventListener("submit", (clique) => {
+        clique.preventDefault();
 
         if (senha.value !== confirmarSenha.value) {
-          mensagem.textContent = "As senhas não coincidem.";
+          mensagem.textContent = "As senhas não são iguais. Tente novamente.";
           mensagem.style.color = "red";
           return;
         }
