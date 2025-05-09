@@ -1,11 +1,22 @@
 const produtosContainer = document.getElementById('produtos');
 const categoriaSelect = document.getElementById('categoria');
+const searchInput = document.getElementById('search');
 
-function carregarProdutos(categoria = 'all') {
+let categoriaAtual = 'all';  // Variável para armazenar a categoria selecionada
+let termoPesquisa = '';  // Variável para armazenar o termo de pesquisa
+
+function carregarProdutos(categoria = 'all', pesquisa = '') {
   fetch('https://fakestoreapi.com/products')
     .then(res => res.json())
     .then(produtos => {
-      const produtosFiltrados = categoria === 'all' ? produtos : produtos.filter(prod => prod.category === categoria);
+      // Filtra por categoria
+      const produtosFiltradosCategoria = categoria === 'all' ? produtos : produtos.filter(prod => prod.category === categoria);
+
+      // Filtra por termo de pesquisa
+      const produtosFiltrados = produtosFiltradosCategoria.filter(prod =>
+        prod.title.toLowerCase().includes(pesquisa.toLowerCase())
+      );
+
       exibirProdutos(produtosFiltrados);
     });
 }
@@ -54,7 +65,14 @@ function exibirProdutos(produtos) {
 }
 
 categoriaSelect.addEventListener('change', (e) => {
-  carregarProdutos(e.target.value);
+  categoriaAtual = e.target.value;
+  carregarProdutos(categoriaAtual, termoPesquisa);
 });
 
-carregarProdutos();
+searchInput.addEventListener('input', (e) => {
+  termoPesquisa = e.target.value;
+  carregarProdutos(categoriaAtual, termoPesquisa);
+});
+
+// Carrega produtos inicialmente
+carregarProdutos(categoriaAtual, termoPesquisa);
