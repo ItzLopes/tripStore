@@ -2,23 +2,23 @@ const categoriaFavoritosSelect = document.getElementById('categoria-favoritos');
 const favoritosContainer = document.getElementById('produtos-favoritos');
 const searchInput = document.getElementById('searchInput');
 
-// Função para carregar os favoritos
+
 function carregarFavoritos(categoria = 'all') {
   const favoritos = JSON.parse(sessionStorage.getItem('favoritos')) || [];
   
-  // Verifica se existem favoritos e faz a requisição para obter os detalhes
+ 
   const produtosFavoritos = favoritos.map(id => fetch(`https://fakestoreapi.com/products/${id}`).then(res => res.json()));
 
   Promise.all(produtosFavoritos).then(produtos => {
-    // Filtra os produtos com base na categoria
+
     const produtosFiltrados = categoria === 'all' ? produtos : produtos.filter(prod => prod.category === categoria);
     exibirFavoritos(produtosFiltrados);
   });
 }
 
-// Função para exibir os favoritos na página
+
 function exibirFavoritos(produtos) {
-  favoritosContainer.innerHTML = ''; // Limpa a lista de produtos
+  favoritosContainer.innerHTML = ''; 
 
   if (produtos.length === 0) {
     favoritosContainer.innerHTML = "<p>Nenhum favorito encontrado.</p>";
@@ -38,7 +38,7 @@ function exibirFavoritos(produtos) {
   }
 }
 
-// Função para remover um produto dos favoritos
+
 function removerFavorito(id) {
   let favoritos = JSON.parse(sessionStorage.getItem('favoritos')) || [];
   favoritos = favoritos.filter(favId => favId !== id);
@@ -46,12 +46,11 @@ function removerFavorito(id) {
   carregarFavoritos(categoriaFavoritosSelect.value);  // Atualiza os favoritos após remoção
 }
 
-// Filtro por categoria
+
 categoriaFavoritosSelect.addEventListener('change', (e) => {
   carregarFavoritos(e.target.value);
 });
 
-// Filtro de pesquisa
 searchInput.addEventListener('input', aplicarFiltroPesquisa);
 
 function aplicarFiltroPesquisa() {
@@ -76,5 +75,5 @@ function aplicarFiltroPesquisa() {
   });
 }
 
-// Carrega os favoritos ao carregar a página
+
 carregarFavoritos();
