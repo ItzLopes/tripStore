@@ -4,10 +4,24 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Trip Store Produtos</title>
-  <link rel="stylesheet" href="./produto.css">
+  <link rel="stylesheet" href="../css/produto.css">
+  <link rel="stylesheet" href="../css/header.css">
 </head>
 <body>
-    
+    <header class="header">
+    <div class="logo">
+      <a href="home.html">Trip Store</a>
+    </div>
+    <nav class="nav">
+      <ul>
+        <li><a href="home.html">Home</a></li>
+        <li><a href="produto.html">Produto</a></li>
+        <li><a href="carrinho.html">Carrinho</a></li>
+        <li><a href="usuario.html">Usuário</a></li>
+        <li><a href="favoritos.html">Favoritos</a></li>
+      </ul>
+    </nav>
+  </header>
 
   <div class="produto-container" id="produto"></div>
 
@@ -29,11 +43,11 @@
             <p class="descricao-produto">${prod.description}</p>
             <div class="botoes-produto">
                 <button class="botao-favoritar-produto">
-                  <img class="img-favorito-produto" src="./img/Star 4 (1).svg" alt="star">
+                  <img class="img-favorito-produto" src="../img/Star 4 (1).svg" alt="star">
                   <h4>Favoritar</h4>
                 </button>
                 <button class="botao-comprar-produto">
-                  <img class="img-carrinho-produto" src="./img/Basket_alt_3_light (1).svg" alt="star">
+                  <img class="img-carrinho-produto" src="../img/Basket_alt_3_light (1).svg" alt="star">
                   <h4>Adicionar ao Carrinho</h4>
                 </button>
             </div>
@@ -47,6 +61,6 @@
 </html>
 
 <!-- <button class="botao-comprar-produto">
-  <img class="img-carrinho-produto" src="./img/Basket_alt_3_light (1).svg" alt="star">
+  <img class="img-carrinho-produto" src="../img/Basket_alt_3_light (1).svg" alt="star">
   <h4>Adicionar ao Carrinho</h4>
 </button> -->
