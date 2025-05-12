@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Editar Produtos | Trip's Store</title>
+  <link rel="stylesheet" href="../styles/pages/editar-produtos.css" />
+  <link rel="stylesheet" href="../styles/alert.css" />
+
+  <link rel="stylesheet" href="../styles/header.css" />
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <main>
+    <h1>Gerenciar Produtos</h1>
+
+    <label for="acao">Escolha uma ação:</label>
+    <select id="acao">
+      <option value="add">Adicionar Produto</option>
+      <option value="update">Atualizar Produto</option>
+      <option value="delete">Deletar Produto</option>
+    </select>
+
+    <div id="formContainer"></div>
+    <p id="mensagem"></p>
+  </main>
+
+  <div id="popup" class="popup-overlay">
+    <div class="popup-box">
+      <p>Você precisa estar logado.</p>
+      <button id="popup-ok">OK</button>
+    </div>
+  </div>
+
+  <script src="../js/components/loadHeader.js" defer></script>
+  <script src="../js/pages/editar-produtos.js" defer></script>
+</body>
+</html>

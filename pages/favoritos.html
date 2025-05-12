@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Favoritos | Trip's Store</title>
+  <link rel="stylesheet" href="../styles/pages/favoritos.css" />
+  <link rel="stylesheet" href="../styles/alert.css" />
+
+  <link rel="stylesheet" href="../styles/header.css" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <main>
+    <h1>Meus Favoritos</h1>
+
+    <label for="categoria">Filtrar por categoria:</label>
+    <select id="categoria">
+      <option value="all">Todas as categorias</option>
+    </select>
+
+    <div id="produtos"></div>
+  </main>
+
+  <div id="confirm-popup" class="popup-overlay" style="display: none;">
+    <div class="popup-box">
+      <p id="confirm-message">Deseja remover este item dos favoritos?</p>
+      <div style="margin-top: 1rem;">
+        <button id="confirm-yes">Sim</button>
+        <button id="confirm-no">Não</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="../js/components/loadHeader.js" defer></script>
+  <script src="../js/pages/favoritos.js" defer></script>
+</body>
+</html>

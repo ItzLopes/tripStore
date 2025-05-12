@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Cadastro | Trip's Store</title>
+  <link rel="stylesheet" href="../styles/pages/cadastro.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <main class="login-container">
+    <h1>Cadastro de Usuário</h1>
+    <form id="cadastroForm" class="login-form">
+      <input type="text" id="name" placeholder="Nome completo" required>
+      <input type="text" id="username" placeholder="Usuário" required>
+      <input type="email" id="email" placeholder="Email" required>
+      <input type="password" id="password" placeholder="Senha" required>
+      <button type="submit">Cadastrar</button>
+    </form>
+
+    <p id="mensagem" class="erro"></p>
+    <a href="login.html">Já tem uma conta? Faça login</a>
+  </main>
+
+  <script src="../js/pages/cadastro.js" defer></script>
+</body>
+</html>

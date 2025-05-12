@@ -1,0 +1,16 @@
+body {
+  background: var(--cor-fundo-primaria);
+  background: linear-gradient(135deg, #0f0f0f, #1e1e2f);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  font-family: var(--fonte-padrao);
+  color: var(--cor-texto);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}

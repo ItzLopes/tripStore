@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Carrinho | Trip's Store</title>
+  <link rel="stylesheet" href="../styles/pages/carrinho.css" />
+  <link rel="stylesheet" href="../styles/alert.css" />
+
+  <link rel="stylesheet" href="../styles/header.css" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <main class="container-grid">
+    <section id="productSection" class="cart-section">
+      <div class="cart-content">
+        <h1>Seu Carrinho</h1>
+        <div id="productContainer">Carregando produto...</div>
+      </div>
+    </section>
+
+    <section id="formSection" class="cart-section">
+      <h2>Endereço de Entrega</h2>
+      <form id="addressForm">
+        <label for="cep">CEP</label>
+        <input type="text" id="cep" placeholder="CEP" required />
+
+        <label for="logradouro">Logradouro</label>
+        <input type="text" id="logradouro" placeholder="Logradouro" required />
+
+        <label for="bairro">Bairro</label>
+        <input type="text" id="bairro" placeholder="Bairro" required />
+
+        <label for="cidade">Cidade</label>
+        <input type="text" id="cidade" placeholder="Cidade" required />
+
+        <label for="estado">Estado</label>
+        <input type="text" id="estado" placeholder="Estado" required />
+
+        <button type="submit">Finalizar Compra</button>
+      </form>
+    </section>
+  </main>
+
+  <div id="popup" class="popup-overlay">
+      <div class="popup-box">
+          <p id="popup-message">Você precisa estar logado.</p>
+          <button id="popup-ok">OK</button>
+      </div>
+  </div>
+
+  <script src="../js/components/loadHeader.js" defer></script>
+  <script src="../js/pages/carrinho.js" defer></script>
+</body>
+</html>

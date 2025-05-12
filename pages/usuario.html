@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Usuário | Trip's Store</title>
+    <link rel="stylesheet" href="../styles/pages/usuario.css" />
+    <link rel="stylesheet" href="../styles/alert.css" />
+
+    <link rel="stylesheet" href="../styles/header.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+    <main>
+        <h1>Informações do Usuário</h1>
+
+        <form id="userForm">
+            <input type="text" id="nome" disabled placeholder="Nome">
+            <input type="email" id="email" disabled placeholder="Email">
+            <input type="text" id="telefone" placeholder="Telefone">
+            <input type="text" id="endereco" placeholder="Endereço">
+            <button type="submit">Atualizar Informações</button>
+        </form>
+
+        <p id="msg"></p>
+    </main>
+
+    <div id="popup" class="popup-overlay">
+        <div class="popup-box">
+            <p>Você precisa estar logado.</p>
+            <button id="popup-ok">OK</button>
+        </div>
+    </div>
+
+    <script src="../js/components/loadHeader.js" defer></script>
+    <script src="../js/pages/usuario.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Produto | Trip's Store</title>
+  <link rel="stylesheet" href="../styles/pages/produto.css" />
+  <link rel="stylesheet" href="../styles/alert.css" />
+
+  <link rel="stylesheet" href="../styles/header.css" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <main>
+    <div id="productContainer" class="loading">Carregando...</div>
+  </main>
+
+  <div id="popup" class="popup-overlay">
+    <div class="popup-box">
+        <p id="popup-message">Você precisa estar logado.</p>
+        <button id="popup-ok">OK</button>
+    </div>
+  </div>
+
+  <script src="../js/components/loadHeader.js" defer></script>
+  <script src="../js/pages/produto.js" defer></script>
+</body>
+</html>

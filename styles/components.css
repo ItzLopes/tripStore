@@ -1,0 +1,52 @@
+input {
+  padding: var(--padding-padrao);
+  border: 1px solid var(--cor-input-borda);
+  border-radius: var(--borda-radius);
+  background-color: var(--cor-input-fundo);
+  color: #fff;
+  font-size: 1rem;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+input:focus {
+  border-color: var(--cor-input-focus);
+  box-shadow: 0 0 0 2px #9333ea55;
+  outline: none;
+}
+
+button {
+  padding: var(--padding-padrao);
+  background: var(--cor-gradiente);
+  border: none;
+  border-radius: var(--borda-radius);
+  color: white;
+  font-weight: bold;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+  background: linear-gradient(135deg, #7c3aed, #6d28d9);
+  transform: scale(1.02);
+}
+
+a {
+  display: block;
+  text-align: center;
+  margin-top: 1.5rem;
+  color: var(--cor-destaque);
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+a:hover {
+  color: var(--cor-hover);
+}
+
+.erro {
+  color: var(--cor-erro);
+  text-align: center;
+  margin-top: 1rem;
+  font-size: 0.95rem;
+}
