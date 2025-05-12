@@ -41,7 +41,7 @@ link.href = "../pages/cadastro.html";
 link.textContent = "Cadastre-se aqui";
 
 form.append(usernameInput, passwordInput, button);
-container.className = "login-container";
+//container.className = "login-container";
 container.append(title, form, errorMsg, link);
 
 form.addEventListener("submit", async (e) => {

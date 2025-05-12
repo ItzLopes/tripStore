@@ -6,6 +6,7 @@ input {
   color: #fff;
   font-size: 1rem;
   transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  width: 100%;
 }
 
 input:focus {
@@ -24,11 +25,13 @@ button {
   font-size: 1rem;
   cursor: pointer;
   transition: background 0.3s ease, transform 0.2s ease;
+  width: 100%;
 }
 
 button:hover {
   background: linear-gradient(135deg, #7c3aed, #6d28d9);
   transform: scale(1.02);
+  width: 100%;
 }
 
 a {
@@ -38,6 +41,7 @@ a {
   color: var(--cor-destaque);
   text-decoration: none;
   transition: color 0.3s;
+  width: 100%;
 }
 
 a:hover {
