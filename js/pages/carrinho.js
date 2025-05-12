@@ -127,7 +127,7 @@ addressForm.addEventListener("submit", (e) => {
   popup.style.display = "flex";
 
   popupBtn.addEventListener("click", () => {
-    window.location.href = "../../../tripStore/pages/login.html";
+    window.location.href = "/pages/login.html";
   });
 
   return;
@@ -142,6 +142,6 @@ addressForm.addEventListener("submit", (e) => {
     const quantityInput = document.getElementById("quantity");
     if (quantityInput) quantityInput.value = 1;
 
-    window.location.href = "../../../tripStore/index.html";
+    window.location.href = "/index.html";
   });
 });

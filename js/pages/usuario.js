@@ -9,7 +9,7 @@ if (!userId || !token) {
   popup.style.display = "flex";
 
   popupBtn.addEventListener("click", () => {
-    window.location.href = "../../../tripStore/pages/login.html";
+    window.location.href = "/pages/login.html";
   });
 
   throw new Error("Usuário não autenticado");

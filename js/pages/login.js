@@ -60,7 +60,7 @@ form.addEventListener("submit", async (e) => {
 
     saveSession({ token: data.token, username, userId: user.id });
 
-    window.location.href = "../../../tripStore/index.html";
+    window.location.href = "/index.html";
   } catch (err) {
     errorMsg.textContent = err.message;
     errorMsg.style.display = "block";

@@ -1,7 +1,7 @@
 function loadHeader() {
   const headerContainer = document.querySelector('body');
   
-  fetch('../../../tripStore/js/components/header.html')
+  fetch('/js/components/header.html')
     .then(response => response.text())
     .then(data => {
       headerContainer.insertAdjacentHTML('afterbegin', data);

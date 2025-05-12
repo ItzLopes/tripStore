@@ -18,7 +18,7 @@ function createProductCard(product) {
     <h2>${product.title}</h2>
     <img src="${product.image}" alt="${product.title}" />
     <p>R$ ${product.price.toFixed(2)}</p>
-    <a href="../../../tripStore/pages/produto.html?id=${product.id}">Ver Detalhes</a>
+    <a href="/pages/produto.html?id=${product.id}">Ver Detalhes</a>
   `;
   return card;
 }
